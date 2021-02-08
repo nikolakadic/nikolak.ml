@@ -1,0 +1,17 @@
+[Unit]
+Description=uWSGI instance to serve nikolak.ml project
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/home/django/Documents/nikolak.ml/nikolakblog
+Environment="PATH=/home/django/Documents/nikolak.ml/.venv/bin"
+ExecStart=/home/django/Documents/nikolak.ml/.venv/bin/uwsgi --ini /home/django/Documents/nikolak.ml/server/uwsgi.ini
+KillSignal=SIGQUIT
+Type=notify
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target
+
+
