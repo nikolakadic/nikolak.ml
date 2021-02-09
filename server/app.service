@@ -4,14 +4,12 @@ After=network.target
 
 [Service]
 User=root
-WorkingDirectory=/home/django/Documents/nikolak.ml/nikolakblog
-Environment="PATH=/home/django/Documents/nikolak.ml/.venv/bin"
-ExecStart=/home/django/Documents/nikolak.ml/.venv/bin/uwsgi --ini /home/django/Documents/nikolak.ml/server/uwsgi.ini
+WorkingDirectory=/var/www/nikolak.ml/nikolakblog
+Environment="PATH=/var/www/nikolak.ml/.venv/bin"
+ExecStart=/var/www/nikolak.ml/.venv/bin/uwsgi --ini /var/www/nikolak.ml/.venv/etc/uwsgi.ini
 KillSignal=SIGQUIT
 Type=notify
 NotifyAccess=all
 
 [Install]
 WantedBy=multi-user.target
-
-
