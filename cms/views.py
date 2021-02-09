@@ -3,7 +3,7 @@ from rest_framework import filters
 
 from .models import Author, Country, Blog
 from .serializers import AuthorSerializer, CountrySerializer, BlogSerializer
-
+from nikolakblog.permissions import IsBlogAuthor
 
 class AuthorViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, mixins.RetrieveModelMixin,
                        mixins.UpdateModelMixin,
